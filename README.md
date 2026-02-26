@@ -150,7 +150,7 @@ anyrouter-proxy/
 使用 Caddy 反向代理：
 
 ```
-oa.example.com {
+example.com {
     reverse_proxy localhost:5489
 }
 ```
