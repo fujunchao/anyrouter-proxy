@@ -1,0 +1,21 @@
+services:
+  proxy:
+    build: .
+    ports:
+      - "5489:5489"
+    environment:
+      - TARGET_URL=${TARGET_URL:-https://anyrouter.top}
+      - PORT=5489
+      - API_KEY=${API_KEY}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5489/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  1panel-network:
+    external: true
