@@ -1,0 +1,15 @@
+{
+  "name": "anyrouter-proxy",
+  "version": "2.0.0",
+  "description": "HTTP reverse proxy for AnyRouter — Claude Code system prompt injection for Cherry Studio compatibility",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --outdir=dist",
+    "start": "node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.0"
+  }
+}
